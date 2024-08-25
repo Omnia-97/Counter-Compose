@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,8 +40,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CommonAncestor() {
-    var count by remember { mutableStateOf(0) }
-    var lastAction by remember { mutableStateOf("") }
+    var count by rememberSaveable { mutableStateOf(0) }
+    var lastAction by rememberSaveable { mutableStateOf("") }
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
